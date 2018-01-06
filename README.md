@@ -1,7 +1,7 @@
 Kakeibo
 =======
 
-This software can records TH155 netplay statistics automatically, I believe.
+This software can record TH155 netplay statistics automatically, I believe.
 
 License
 -------
