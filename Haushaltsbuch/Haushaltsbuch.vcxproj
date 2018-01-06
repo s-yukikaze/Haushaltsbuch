@@ -44,13 +44,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)MinimalRT\;$(SolutionDir)Dependencies\sqlite\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(IntDir);$(SolutionDir)Dependencies\sqlite\lib\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)MinimalRT\$(IntDir);$(SolutionDir)Dependencies\sqlite\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)MinimalRT\;$(SolutionDir)Dependencies\sqlite\include\;$(IncludePath)</IncludePath>
     <GenerateManifest>true</GenerateManifest>
-    <LibraryPath>$(SolutionDir)$(IntDir);$(SolutionDir)Dependencies\sqlite\lib\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)MinimalRT\$(IntDir);$(SolutionDir)Dependencies\sqlite\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
