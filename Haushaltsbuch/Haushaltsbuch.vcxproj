@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F5FA1970-E595-47CB-AA92-6B1B885E1F1D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Haushaltsbuch</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)MinimalRT\;$(SolutionDir)Dependencies\sqlite\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(IntDir);$(SolutionDir)Dependencies\sqlite\lib\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)MinimalRT\;$(SolutionDir)Dependencies\sqlite\include\;$(IncludePath)</IncludePath>
+    <GenerateManifest>true</GenerateManifest>
+    <LibraryPath>$(SolutionDir)$(IntDir);$(SolutionDir)Dependencies\sqlite\lib\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>MinimalRT.lib;shlwapi.lib;comctl32.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MinSpace</Optimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <OmitFramePointers>true</OmitFramePointers>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <CompileAsWinRT>false</CompileAsWinRT>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>MinimalRT.lib;shlwapi.lib;comctl32.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>WinMainMinimalRTStartup</EntryPointSymbol>
+      <AllowIsolation>false</AllowIsolation>
+      <AdditionalOptions>/STUB:stub %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Image Include="16.ico" />
+    <Image Include="16void.ico" />
+    <Image Include="32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Autorun.cpp" />
+    <ClCompile Include="Clipboard.cpp" />
+    <ClCompile Include="ColoredRecordView.cpp" />
+    <ClCompile Include="Haushaltsbuch.cpp" />
+    <ClCompile Include="MainWnd.cpp" />
+    <ClCompile Include="Memento.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="QIBSettings.cpp" />
+    <ClCompile Include="RankProfDlg.cpp" />
+    <ClCompile Include="ScoreLine.cpp" />
+    <ClCompile Include="ScoreLineAppendDlg.cpp" />
+    <ClCompile Include="ScoreLineQIBDlg.cpp" />
+    <ClCompile Include="ScoreLineQIBFilterDlg.cpp" />
+    <ClCompile Include="ScoreLineQIBSpecDlg.cpp" />
+    <ClCompile Include="Shortcut.cpp" />
+    <ClCompile Include="ShortcutDlg.cpp" />
+    <ClCompile Include="ShortcutEditDlg.cpp" />
+    <ClCompile Include="SortListView.cpp" />
+    <ClCompile Include="TH155Addr.cpp" />
+    <ClCompile Include="TrackRecordDlg.cpp" />
+    <ClCompile Include="TrackRecordFilterDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Autorun.hpp" />
+    <ClInclude Include="Characters.hpp" />
+    <ClInclude Include="Clipboard.hpp" />
+    <ClInclude Include="ColoredRecordView.hpp" />
+    <ClInclude Include="DlgCommon.hpp" />
+    <ClInclude Include="Formatter.hpp" />
+    <ClInclude Include="Haushaltsbuch.hpp" />
+    <ClInclude Include="MainWnd.hpp" />
+    <ClInclude Include="MappedFile.hpp" />
+    <ClInclude Include="Memento.hpp" />
+    <ClInclude Include="pch.hpp" />
+    <ClInclude Include="QIBSettings.hpp" />
+    <ClInclude Include="RankProfDlg.hpp" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ScoreLine.hpp" />
+    <ClInclude Include="ScoreLineAppendDlg.hpp" />
+    <ClInclude Include="ScoreLineDlg.hpp" />
+    <ClInclude Include="ScoreLineQIBFilterDlg.hpp" />
+    <ClInclude Include="ScoreLineQIBSpecDlg.hpp" />
+    <ClInclude Include="Shortcut.hpp" />
+    <ClInclude Include="ShortcutDlg.hpp" />
+    <ClInclude Include="ShortcutEditDlg.hpp" />
+    <ClInclude Include="SortListView.hpp" />
+    <ClInclude Include="TextFileWriter.hpp" />
+    <ClInclude Include="TH155AddrDef.h" />
+    <ClInclude Include="TrackRecordDlg.hpp" />
+    <ClInclude Include="TrackRecordFilterDlg.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Haushaltsbuch.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Haushaltsbuch.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Dependencies\sqlite\bin\sqlite3.dll">
+      <DeploymentContent>true</DeploymentContent>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="License.txt">
+      <DeploymentContent>true</DeploymentContent>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Readme.txt">
+      <DeploymentContent>true</DeploymentContent>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="stub" />
+    <None Include="TH155Addr.ini">
+      <DeploymentContent>true</DeploymentContent>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

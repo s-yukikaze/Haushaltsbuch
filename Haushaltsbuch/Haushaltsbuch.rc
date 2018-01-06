@@ -1,0 +1,308 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 (日本) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SCORELINE_QIB DIALOGEX 0, 0, 263, 284
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_DLGMODALFRAME | WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_SCORELINE,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,0,0,263,283
+END
+
+IDD_QIBFILTER DIALOGEX 0, 0, 247, 187
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "カスタム戦績"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "プロファイル",IDC_CHECK_P1NAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,22,51,10
+    EDITTEXT        IDC_EDIT_P1NAME,20,34,90,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "ワイルドカードを使う",IDC_CHECK_P1NAME_LIKE,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,36,50,78,10
+    CONTROL         "プロファイル",IDC_CHECK_P2NAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,135,20,51,10
+    EDITTEXT        IDC_EDIT_P2NAME,135,34,90,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "ワイルドカードを使う",IDC_CHECK_P2NAME_LIKE,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,151,50,78,10
+    CONTROL         "起点",IDC_CHECK_DATEBEG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,135,31,10
+    CONTROL         "",IDC_DTP_DATEBEG,"SysDateTimePick32",DTS_RIGHTALIGN | WS_DISABLED | WS_TABSTOP,52,132,55,15
+    LTEXT           "から",IDC_STATIC,110,136,13,8
+    CONTROL         "終点",IDC_CHECK_DATEEND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,135,28,10
+    CONTROL         "",IDC_DTP_DATEEND,"SysDateTimePick32",DTS_RIGHTALIGN | WS_DISABLED | WS_TABSTOP,157,132,52,15
+    LTEXT           "まで",IDC_STATIC,212,136,14,8
+    DEFPUSHBUTTON   "OK",IDOK,132,165,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,188,165,50,14
+    GROUPBOX        "自分側",IDC_STATIC,8,7,111,102
+    GROUPBOX        "期間",IDC_STATIC,8,115,231,40
+    GROUPBOX        "相手側",IDC_STATIC,127,7,111,102
+    CONTROL         "スレーブ",IDC_CHECK_P1CHAR_SLAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,69,41,10
+    COMBOBOX        IDC_COMBO_P1CHAR_SLAVE,20,82,90,100,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "スレーブ",IDC_CHECK_P2CHAR_SLAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,135,69,41,10
+    COMBOBOX        IDC_COMBO_P2CHAR_SLAVE,135,82,90,101,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROFSHORTCUT DIALOGEX 0, 0, 279, 145
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "プロファイル短縮キーの設定"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_PROFSCKEY,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,209,131
+    PUSHBUTTON      "OK",IDOK,223,107,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,223,124,50,14
+    PUSHBUTTON      "削除",IDC_PROFSC_DEL,223,39,50,14
+    PUSHBUTTON      "編集",IDC_PROFSC_EDIT,223,23,50,14
+    PUSHBUTTON      "追加",IDC_PROFSC_ADD,223,7,50,14
+END
+
+IDD_PROFSCEDIT DIALOGEX 0, 0, 208, 73
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "プロファイル短縮キー"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,99,52,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,153,52,50,14
+    CONTROL         "",IDC_PROFSCKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,5,50,80,14
+    LTEXT           "短縮キー",IDC_STATIC,5,39,30,8
+    LTEXT           "プロファイル",IDC_STATIC,5,7,36,8
+    EDITTEXT        IDC_PROFSCPATH,5,19,174,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_PROFSCPATH_PREF,180,19,22,14
+END
+
+IDD_TRFILTER DIALOGEX 0, 0, 251, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "対戦履歴フィルタの設定"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "自分側",IDC_STATIC,9,3,111,122
+    CONTROL         "プロファイル",IDC_CHECK_P1NAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,17,51,10
+    EDITTEXT        IDC_EDIT_P1NAME,20,30,90,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "マスター",IDC_CHECK_P1CHAR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,59,40,10
+    COMBOBOX        IDC_COMBO_P1CHAR,20,72,90,101,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "相手側",IDC_STATIC,129,3,111,122
+    CONTROL         "プロファイル",IDC_CHECK_P2NAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,17,51,10
+    EDITTEXT        IDC_EDIT_P2NAME,140,30,90,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "マスター",IDC_CHECK_P2CHAR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,59,40,10
+    COMBOBOX        IDC_COMBO_P2CHAR,140,72,90,102,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "期間",IDC_STATIC,9,135,231,40
+    CONTROL         "起点",IDC_CHECK_DATEBEG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,153,30,10
+    CONTROL         "",IDC_DTP_DATEBEG,"SysDateTimePick32",DTS_RIGHTALIGN | WS_DISABLED | WS_TABSTOP,49,150,56,15
+    LTEXT           "から",IDC_STATIC,109,154,13,8
+    CONTROL         "終点",IDC_CHECK_DATEEND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,153,30,10
+    CONTROL         "",IDC_DTP_DATEEND,"SysDateTimePick32",DTS_RIGHTALIGN | WS_DISABLED | WS_TABSTOP,160,150,56,15
+    LTEXT           "まで",IDC_STATIC,222,155,14,8
+    EDITTEXT        IDC_EDIT_TRMAX,65,185,38,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "",IDC_SPIN_TRMAX,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,95,178,10,14
+    LTEXT           "件",IDC_STATIC,109,188,9,8
+    DEFPUSHBUTTON   "OK",IDOK,137,186,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,189,186,50,14
+    CONTROL         "件数制限",IDC_CHECK_TRMAX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,187,45,10
+    CONTROL         "ワイルドカードを使う",IDC_CHECK_P1NAME_LIKE,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,31,46,78,10
+    CONTROL         "ワイルドカードを使う",IDC_CHECK_P2NAME_LIKE,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,152,46,78,10
+    CONTROL         "スレーブ",IDC_CHECK_P1CHAR_SLAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,89,41,10
+    COMBOBOX        IDC_COMBO_P1CHAR_SLAVE,20,102,90,93,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "スレーブ",IDC_CHECK_P2CHAR_SLAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,89,41,10
+    COMBOBOX        IDC_COMBO_P2CHAR_SLAVE,140,102,90,92,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_TRACKRECORD DIALOGEX 0, 0, 471, 223
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_DLGMODALFRAME | WS_EX_APPWINDOW
+CAPTION "対戦履歴"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_TRACKRECORD,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,0,0,470,222
+END
+
+IDD_SCORELINE_APPEND DIALOGEX 0, 0, 247, 171
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "戦績の手動追加"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,123,150,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,187,150,50,14
+    COMBOBOX        IDC_COMBO_P1CHAR_SLAVE,17,102,90,68,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_P2CHAR_SLAVE,135,102,90,69,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "相手側",IDC_STATIC,127,28,111,102
+    GROUPBOX        "自分側",IDC_STATIC,7,28,111,102
+    LTEXT           "スレーブを選んでください。",IDC_STATIC,10,9,222,12
+    LTEXT           "スレーブ",IDC_STATIC,17,86,33,12
+    LTEXT           "スレーブ",IDC_STATIC,135,86,33,12
+    LTEXT           "マスター",IDC_STATIC,17,47,33,12
+    LTEXT           "マスター",IDC_STATIC,135,47,33,12
+    LTEXT           "",IDC_STATIC_P1CHAR,18,63,90,12,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_STATIC_P2CHAR,136,63,90,12,0,WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SCORELINE_QIB, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 283
+    END
+
+    IDD_QIBFILTER, DIALOG
+    BEGIN
+    END
+
+    IDD_PROFSHORTCUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 272
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_PROFSCEDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+
+    IDD_TRFILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_TRACKRECORD, DIALOG
+    BEGIN
+    END
+
+    IDD_SCORELINE_APPEND, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU
+BEGIN
+    POPUP "1"
+    BEGIN
+        MENUITEM "対戦表を表示する",                    ID_SHOW_SCORELINE
+        MENUITEM "プロフ短縮キー設定",                   ID_PROFSCKEY
+        MENUITEM SEPARATOR
+        MENUITEM "自動カウントしない",                   ID_DISABLE_CB
+        MENUITEM SEPARATOR
+        POPUP "対戦結果コピー"
+        BEGIN
+            MENUITEM "しない",                         ID_INFOTRANS_NONE
+            MENUITEM "相手プロファイル名",                   ID_INFOTRANS_PROFILE
+            MENUITEM "全部",                          ID_INFOTRANS_ALL
+        END
+        MENUITEM SEPARATOR
+        POPUP "自動起動"
+        BEGIN
+            MENUITEM "ゲームプログラムの自動起動",               ID_AUTORUN_GAMEPROGRAM_FLIPENABLED
+            MENUITEM "ゲームプログラムのパスの設定",              ID_AUTORUN_GAMEPROGRAM_OPENFILENAME
+            MENUITEM SEPARATOR
+            MENUITEM "報告ツールの自動起動",                  ID_AUTORUN_REPORTTOOL_FLIPENABLED
+            MENUITEM "報告ツールのパスの設定",                 ID_AUTORUN_REPORTTOOL_OPENFILENAME
+        END
+        MENUITEM SEPARATOR
+        POPUP "表示オプション"
+        BEGIN
+            MENUITEM "勝率を下一桁まで表示",                  ID_GLOBAL_HIGHPRES_RATE
+            MENUITEM "勝敗を色分け表示",                    ID_GLOBAL_COLORFUL_RECORD
+            MENUITEM SEPARATOR
+            MENUITEM "サイズを自動調節する",                  ID_GLOBAL_AUTOADJUSTVIEWRECT
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "終了する",                        ID_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+IDR_241                 RT_MANIFEST             "Haushaltsbuch.xml"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAIN                ICON                    "32.ico"
+IDI_IDLE                ICON                    "16void.ico"
+IDI_ACTIVE              ICON                    "16.ico"
+#endif    // 日本語 (日本) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

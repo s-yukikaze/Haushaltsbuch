@@ -1,0 +1,5 @@
+EXPORTS
+	TH155AddrStartup
+	TH155AddrCleanup
+	TH155AddrGetState
+	TH155AddrGetParam
