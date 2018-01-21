@@ -48,6 +48,12 @@ union {
 } ipcData = {};
 #pragma data_seg()
 
+typedef struct {
+	LPCTSTR windowClassName;
+	LPCTSTR windowCaptionFormerPart;
+	HWND hwndResult;
+} MYFINDWINDOWPARAMS;
+
 static const LPCSTR characterRomanNames[] = {
 	"reimu",
 	"marisa",
@@ -82,6 +88,7 @@ static HWND ipcWindow = nullptr;
 
 static TCHAR TH155WindowClass[256];
 static TCHAR TH155WindowCaption[256];
+static DWORD TH155WindowCaptionCount;
 static DWORD TH155CoreBase = 0;
 
 static int paramOld[TH155PARAM_MAX];
@@ -110,8 +117,8 @@ static bool TH155LoadProfileForClient()
 	Minimal::ProcessHeapPath profPath;
 	if (!TryGetModulePath(libModuleSaved, profPath)) return false;
 	MinimalIniFile profile(profPath /= _T("TH155Addr.ini"));
-	LoadChar(TH155WindowClass,   WindowClass);
-	LoadChar(TH155WindowCaption, WindowCaption);
+	LoadChar(TH155WindowClass, WindowClass);
+	TH155WindowCaptionCount = LoadChar(TH155WindowCaption, WindowCaption);
 	return true;
 }
 
@@ -428,10 +435,33 @@ static void TH155Callback(short Msg, short param1, int param2)
 	}
 }
 
+static BOOL CALLBACK TH155FindWindowProc(HWND hwnd, LPARAM param)
+{
+	TCHAR textBuff[256];
+	if (::GetClassName(hwnd, textBuff, _countof(textBuff)) > 0 &&
+		::lstrcmp(TH155WindowClass, textBuff) == 0 &&
+		::GetWindowText(hwnd, textBuff, _countof(textBuff)) > 0 &&
+		::StrCmpN(TH155WindowCaption, textBuff, TH155WindowCaptionCount + 1) == 0) {
+		*reinterpret_cast<HWND*>(param) = hwnd;
+		return FALSE;
+	}
+
+	return TRUE;
+}
+
+static HWND TH155FindWindow()
+{
+	HWND hwndResult = nullptr;
+	if (TH155WindowCaptionCount > 0) {
+		::EnumWindows(TH155FindWindowProc, reinterpret_cast<LPARAM>(&hwndResult));
+	}
+	return hwndResult;
+}
+
 static TH155STATE TH155StateWaitForHooking()
 {
 	TH155STATE ret = TH155STATE_NOTFOUND;
-	HWND TH155Window = FindWindow(TH155WindowClass, TH155WindowCaption);
+	HWND TH155Window = TH155FindWindow();
 	if (TH155Window != nullptr) {
 		DWORD TH155TId, TH155PId;
 		TH155TId = GetWindowThreadProcessId(TH155Window, &TH155PId);
