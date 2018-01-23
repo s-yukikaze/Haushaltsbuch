@@ -639,14 +639,14 @@ DWORD_PTR WINAPI TH155AddrGetParam(int param)
 		}
 		break;
 	case TH155PARAM_P1NAME:
-/*		if (::FindRTChild("network/server_profile/name", childType, childVal) && (childType & 0xFFFFF) == 0x10 && RTChildToString(childVal, paramBuff, sizeof(paramBuff))) {
-			return (DWORD_PTR)pnameBuff;
-		} */
+		if (::FindRTChild("network/player_name/0", childType, childVal) && (childType & 0xFFFFF) == 0x10 && RTChildToString(childVal, pnameBuff, sizeof(pnameBuff))) {
+			return reinterpret_cast<DWORD_PTR>(pnameBuff);
+		}
 		break;
 	case TH155PARAM_P2NAME:
-/*		if (::FindRTChild("network/client_profile/name", childType, childVal) && (childType & 0xFFFFF) == 0x10 && RTChildToString(childVal, paramBuff, sizeof(paramBuff))) {
-			return (DWORD_PTR)pnameBuff;
-		} */
+		if (::FindRTChild("network/player_name/1", childType, childVal) && (childType & 0xFFFFF) == 0x10 && RTChildToString(childVal, pnameBuff, sizeof(pnameBuff))) {
+			return reinterpret_cast<DWORD_PTR>(pnameBuff);
+		}
 		break;
 	default:
 		break;
