@@ -15,9 +15,9 @@
 
 #define POLL_INTERVAL 50
 
-#define Default_CoreBase        0x004d4ce4
+#define Default_CoreBase        0x004dace4
 #define Default_WindowClass     _T("th155")
-#define Default_WindowCaption   _T("“Œ•ûœßˆË‰Ø@` Antinomy of Common Flowers. Ver1.02b")
+#define Default_WindowCaption   _T("“Œ•ûœßˆË‰Ø@` Antinomy of Common Flowers. Ver")
 
 #define SQSTRING_LIMIT 256
 
