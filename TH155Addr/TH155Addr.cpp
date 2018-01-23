@@ -441,7 +441,7 @@ static BOOL CALLBACK TH155FindWindowProc(HWND hwnd, LPARAM param)
 	if (::GetClassName(hwnd, textBuff, _countof(textBuff)) > 0 &&
 		::lstrcmp(TH155WindowClass, textBuff) == 0 &&
 		::GetWindowText(hwnd, textBuff, _countof(textBuff)) > 0 &&
-		::StrCmpN(TH155WindowCaption, textBuff, TH155WindowCaptionCount + 1) == 0) {
+		::StrCmpN(TH155WindowCaption, textBuff, TH155WindowCaptionCount) == 0) {
 		*reinterpret_cast<HWND*>(param) = hwnd;
 		return FALSE;
 	}
