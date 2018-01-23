@@ -49,8 +49,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="MinimalProc.asm">
+    <MASM Include="MinimalProc.asm">
       <Filter>ソース ファイル</Filter>
-    </None>
+    </MASM>
   </ItemGroup>
 </Project>

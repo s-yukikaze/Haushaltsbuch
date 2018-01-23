@@ -67,7 +67,6 @@
       <EntryPointSymbol>
       </EntryPointSymbol>
       <SpecifySectionAttributes>.TH155HK,RWS</SpecifySectionAttributes>
-      <AllowIsolation>false</AllowIsolation>
       <ImportLibrary>$(IntDir)$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
