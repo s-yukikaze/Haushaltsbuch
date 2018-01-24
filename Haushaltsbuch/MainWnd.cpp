@@ -361,7 +361,7 @@ static void NotifyMenu_OnAutorunReportToolOpenFileName(HWND hwnd)
 {
 	Minimal::ProcessHeapPath path;
 	TryGetModulePath(GetModuleHandle(nullptr), path);
-	Autorun_OpenFileName(hwnd, path, _T("報告ツール (spr_report.exe)\0spr_report.exe\0"), _T("ReportTool"));
+	Autorun_OpenFileName(hwnd, path, _T("報告ツール (kkb_report.exe)\0kkb_report.exe\0"), _T("ReportTool"));
 }
 
 
